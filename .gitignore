@@ -1,8 +1,12 @@
 # VS Code
 .vscode/
 
+# Rider
+.idea/
+
 # 
 obj/
 bin/
 
-
+# DotSettings
+Folder.DotSettings.user
