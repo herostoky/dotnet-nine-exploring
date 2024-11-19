@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using MigrationFix.Databases;
 using Scalar.AspNetCore;
 
@@ -9,7 +10,8 @@ builder.Services.AddOpenApi();
 builder.Services.AddControllers();
 
 // Database
-builder.Services.AddDbContext<AppDbContext>();
+builder.Services.AddDbContext<AppDbContext>(options => 
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
