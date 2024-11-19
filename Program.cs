@@ -7,6 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
 builder.Services.AddControllers();
 
+// Database
+//builder.Services.AddDbContext
+
 var app = builder.Build();
 
 app.MapControllers();
