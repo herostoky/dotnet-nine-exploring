@@ -12,7 +12,10 @@ app.MapControllers();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app.MapOpenApi(); // /openapi/v1.json
+    app.UseSwaggerUI(options => options.SwaggerEndpoint(
+        url: "/openapi/v1.json",
+        name: "WeatherForecast API V1")); // /swagger/index.html
 }
 
 app.UseHttpsRedirection();
