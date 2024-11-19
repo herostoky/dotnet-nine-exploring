@@ -1,3 +1,4 @@
+using MigrationFix.Databases;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,7 +9,7 @@ builder.Services.AddOpenApi();
 builder.Services.AddControllers();
 
 // Database
-//builder.Services.AddDbContext
+builder.Services.AddDbContext<AppDbContext>();
 
 var app = builder.Build();
 
